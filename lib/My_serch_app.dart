@@ -1,5 +1,11 @@
 
 
+<<<<<<< HEAD
+=======
+import 'dart:convert';
+import 'dart:typed_data';
+
+>>>>>>> 278f8e0 (first commit)
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
@@ -11,6 +17,11 @@ class MySearchApp extends StatefulWidget {
 }
 
 class _MySearchAppState extends State<MySearchApp> {
+<<<<<<< HEAD
+=======
+  String a='https://www.google.com/';
+  var postData = Uint8List.fromList(utf8.encode("firstname=Foo&surname=Bar"));
+>>>>>>> 278f8e0 (first commit)
   int _selectedIndex = 0;
   InAppWebViewController controller = InAppWebViewController(1, InAppWebView());
   late PullToRefreshController pullToRefreshController;
@@ -35,6 +46,13 @@ class _MySearchAppState extends State<MySearchApp> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: InkWell(
+<<<<<<< HEAD
+=======
+            onTap: () {
+                //controller.postUrl(url: Uri.parse("https://www.google.com/"), postData: postData);
+              controller.loadUrl(urlRequest: URLRequest(url: Uri.parse(a)));
+            },
+>>>>>>> 278f8e0 (first commit)
             child: Icon(Icons.home,color: Colors.black),
           ),label: ''),
           BottomNavigationBarItem(
@@ -134,7 +152,11 @@ class _MySearchAppState extends State<MySearchApp> {
         onWebViewCreated: (InAppWebViewController webViewController) {
           controller =  webViewController;
         },
+<<<<<<< HEAD
         initialUrlRequest: URLRequest(url: Uri.parse('https://www.google.com/')),
+=======
+        initialUrlRequest: URLRequest(url: Uri.parse(a)),
+>>>>>>> 278f8e0 (first commit)
         pullToRefreshController: pullToRefreshController,
 
         onProgressChanged: (controller,progress) {
